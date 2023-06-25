@@ -6,13 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivPosterMusic"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_200"
+        android:background="#C5C5C5"
+        app:layout_constraintBottom_toTopOf="@id/ibPlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
+        app:srcCompat="@drawable/ic_music_note" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:background="@null"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_play_circle_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/ivPosterMusic"
+        app:layout_constraintStart_toStartOf="@id/ivPosterMusic"
+        app:layout_constraintTop_toBottomOf="@id/ivPosterMusic" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_pause_circle_100"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ibPlay"
+        app:layout_constraintEnd_toEndOf="@+id/ibPlay"
+        app:layout_constraintStart_toStartOf="@+id/ibPlay"
+        app:layout_constraintTop_toTopOf="@+id/ibPlay" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibSkipNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_skip_next_40"
+        app:layout_constraintBottom_toBottomOf="@id/ibPlay"
+        app:layout_constraintStart_toEndOf="@id/ibPlay"
+        app:layout_constraintTop_toTopOf="@+id/ibPlay" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibSkipPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/id_skip_previous_40"
+        app:layout_constraintBottom_toBottomOf="@id/ibPlay"
+        app:layout_constraintEnd_toStartOf="@id/ibPlay"
+        app:layout_constraintTop_toTopOf="@+id/ibPlay" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
