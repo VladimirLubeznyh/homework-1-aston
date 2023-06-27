@@ -8,7 +8,6 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
-import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import androidx.activity.result.contract.ActivityResultContracts
@@ -123,6 +122,7 @@ class MainActivity : AppCompatActivity() {
             correctRenderButton(service)
         }
     }
+
    //Displays the correct button depending on whether the player is playing or not
     private fun correctRenderButton(service: MusicPlayerService) {
         if (service.isPlaying()) {
@@ -132,11 +132,5 @@ class MainActivity : AppCompatActivity() {
             startBt.visibility = View.VISIBLE
             stopBt.visibility = View.INVISIBLE
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("MUSIK", "Activity destroy")
-        stopService(intent)
     }
 }

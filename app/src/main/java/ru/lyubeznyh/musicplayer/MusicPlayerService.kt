@@ -82,6 +82,7 @@ class MusicPlayerService : Service(), MediaPlayer.OnCompletionListener {
 
     fun stopTrack() {
         mediaPlayer?.pause()
+        if(isForeground) stopSelf()
     }
 
     fun nextTrack() {
